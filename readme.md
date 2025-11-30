@@ -3,6 +3,7 @@
 RL4IL is a repository for inverse design de novo organic ions in ionic liquids utilizing a reinforcement learning (RL) strategy. 
 
 As illustrated in the following Figure, the RL framework comprises three iterative steps. (1) Forward model training: An ML model was developed to predict the ionic conductivity of ILs. (2) Inverse generation: The trained forward model was used as a reward function in an RNN–MCTS inverse generator, enabling de novo design of DCA-based IL cations toward high predicted conductivity. (3) Validation and retraining: Newly generated ILs were validated via MD simulations. The resulting conductivity data were used to expand the training set and improve the forward model’s accuracy. The retrained model was then reintegrated into the RNN–MCTS generator, and the cycle was repeated. 
+<img width="612" height="326" alt="image" src="https://github.com/user-attachments/assets/d59fd72d-e720-40b0-b55c-38ce8a0411e4" />
 
 
 ## Usage
