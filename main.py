@@ -19,7 +19,6 @@ if len(physical_devices) > 0:
 sigma_results = pd.read_csv('sigma_result.csv')
 model_0 = RNN.LoadFromFile('data/rnn_model_cation')
 smis_0 = sigma_results['cation']
-training_data = Dataset(smis_0, total_symbol_list=model_0.total_symbol_list)
 
 
 def smiles_to_ECFP(smi):
@@ -32,7 +31,7 @@ X = np.array([smiles_to_ECFP(sim) for sim in sigma_results['cation']])
 Y = np.array(sigma_results['sigma_calc'])
 Y = Y.reshape(-1, 1)
 
-# kernel = 1 * RBF(length_scale=1.0, length_scale_bounds=(1e-5, 1e5))
+
 kernel = RBF()
 gpr = GaussianProcessRegressor(kernel=kernel)
 gpr.fit(X, Y)
